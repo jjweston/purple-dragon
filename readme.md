@@ -81,7 +81,7 @@ There is no requirement that every attribute have a unique name.
   { <i>NodeAttributes</i> <i>NodeChildren</i> }
 
 <i>NodeAttributes:</i>
-  [ <i>{NodeAttribute} </i> ]
+  [ <i>{NodeAttribute}</i> ]
 
 <i>NodeAttribute:</i>
   <i>Element</i> <i>Element</i>
