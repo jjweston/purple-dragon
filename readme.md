@@ -22,12 +22,12 @@ File Extension: `.pdl`
 
 ### Element
 
-An *Element* is one of three types: *String*, *Byte Array*, or *Node*.
+An *Element* is either `null` or one of three types: *String*, *Byte Array*, or *Node*.
 
 <pre>
 <i>Element:</i>
   <i>(one of)</i>
-  <i>String</i> <i>ByteArray</i> <i>Node</i>
+  null <i>String</i> <i>ByteArray</i> <i>Node</i>
 </pre>
 
 ### String
