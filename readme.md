@@ -56,7 +56,7 @@ A *Byte Array* is an ordered collection of bytes.
 
 <pre>
 <i>ByteArray:</i>
-  &lt; <i>{Byte}</i> &gt;
+  [ <i>{Byte}</i> ]
 
 <i>Byte:</i>
   <i>HexDigit</i> <i>HexDigit</i>
