@@ -26,55 +26,42 @@ SOFTWARE.
 
 package com.sir_toby.purpledragon.data;
 
-import java.util.HexFormat;
-
-public class ByteArrayElement extends Element
+public class NodeAttribute
 {
-    private static final int lineLength = 95;
+    private final Element name;
+    private final Element value;
 
-    private final byte[] byteArray;
-
-    public ByteArrayElement( byte[] byteArray )
+    public NodeAttribute( Element name, Element value )
     {
-        this.byteArray = byteArray;
+        this.name  = name;
+        this.value = value;
+    }
+
+    public String toString()
+    {
+        return this.toString( "" );
     }
 
     public String toString( String prefix )
     {
         StringBuilder builder = new StringBuilder();
-        builder.append( prefix );
-        builder.append( "[" );
+        builder.append( this.elementToString( this.name,  prefix ));
+        builder.append( this.elementToString( this.value, prefix ));
+        return builder.toString();
+    }
 
-        String hexString = HexFormat.ofDelimiter( " " ).formatHex( this.byteArray );
+    private String elementToString( Element element, String prefix )
+    {
+        StringBuilder builder = new StringBuilder();
 
-        if ( byteArray.length > 32 )
+        if ( element == null )
         {
-            builder.append( System.lineSeparator() );
             builder.append( prefix );
-
-            while ( hexString.length() > 0 )
-            {
-                String lineString = hexString.length() <= ByteArrayElement.lineLength ?
-                        hexString : hexString.substring( 0, ByteArrayElement.lineLength );
-
-                builder.append( "    " );
-                builder.append( lineString );
-                builder.append( System.lineSeparator() );
-                builder.append( prefix );
-
-                hexString = hexString.length() <= ByteArrayElement.lineLength ?
-                        "" : hexString.substring( ByteArrayElement.lineLength + 1 );
-            }
+            builder.append( "null" );
+            builder.append( System.lineSeparator() );
         }
-        else
-        {
-            if ( this.byteArray.length > 0 ) builder.append( " " );
-            builder.append( hexString );
-            if ( this.byteArray.length > 0 ) builder.append( " " );
-        }
+        else builder.append( element.toString( prefix ));
 
-        builder.append( "]" );
-        builder.append( System.lineSeparator() );
         return builder.toString();
     }
 }

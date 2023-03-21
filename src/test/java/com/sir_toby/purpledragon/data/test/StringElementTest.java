@@ -36,8 +36,10 @@ public class StringElementTest
     public void toString_test()
     {
         String input = "tab: \t, linefeed: \n, carriage return: \r, double quote: \", backslash: \\";
-        String expected = "\"tab: \\t, linefeed: \\n, carriage return: \\r, double quote: \\\", backslash: \\\\\"";
+        String prefix = "    ";
+        String expected = "    \"tab: \\t, linefeed: \\n, carriage return: \\r, double quote: \\\", backslash: \\\\\"" +
+                          System.lineSeparator();
         StringElement stringElement = new StringElement( input );
-        Assertions.assertEquals( expected, stringElement.toString(), "Unexpected toString() result." );
+        Assertions.assertEquals( expected, stringElement.toString( prefix ), "Unexpected toString() result." );
     }
 }

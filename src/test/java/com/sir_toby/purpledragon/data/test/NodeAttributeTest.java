@@ -24,38 +24,32 @@ SOFTWARE.
 
 */
 
-package com.sir_toby.purpledragon.data;
+package com.sir_toby.purpledragon.data.test;
 
-public class StringElement extends Element
+import com.sir_toby.purpledragon.data.NodeAttribute;
+import com.sir_toby.purpledragon.data.StringElement;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+public class NodeAttributeTest
 {
-    private final String string;
-
-    public StringElement( String string )
+    @Test
+    public void toString_null()
     {
-        this.string = string;
+        String prefix = "    ";
+        String expected = "    null" + System.lineSeparator() +
+                          "    null" + System.lineSeparator();
+        NodeAttribute nodeAttribute = new NodeAttribute( null, null );
+        Assertions.assertEquals( expected, nodeAttribute.toString( prefix ), "Unexpected toString() result." );
     }
 
-    public String toString( String prefix )
+    @Test
+    public void toString_string()
     {
-        StringBuilder builder = new StringBuilder();
-        builder.append( prefix );
-        builder.append( "\"" );
-
-        for ( char c : this.string.toCharArray() )
-        {
-            switch ( c )
-            {
-                case '\t' : builder.append( "\\t"  ); break;
-                case '\n' : builder.append( "\\n"  ); break;
-                case '\r' : builder.append( "\\r"  ); break;
-                case '\"' : builder.append( "\\\"" ); break;
-                case '\\' : builder.append( "\\\\" ); break;
-                default   : builder.append( c      ); break;
-            }
-        }
-
-        builder.append( "\"" );
-        builder.append( System.lineSeparator() );
-        return builder.toString();
+        String prefix = "        ";
+        String expected = "        \"name\"" + System.lineSeparator() +
+                          "        \"value\"" + System.lineSeparator();
+        NodeAttribute nodeAttribute = new NodeAttribute( new StringElement( "name" ), new StringElement( "value" ));
+        Assertions.assertEquals( expected, nodeAttribute.toString( prefix ), "Unexpected toString() result." );
     }
 }

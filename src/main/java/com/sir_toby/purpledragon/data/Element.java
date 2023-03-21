@@ -26,36 +26,12 @@ SOFTWARE.
 
 package com.sir_toby.purpledragon.data;
 
-public class StringElement extends Element
+public abstract class Element
 {
-    private final String string;
+    public abstract String toString( String prefix );
 
-    public StringElement( String string )
+    public String toString()
     {
-        this.string = string;
-    }
-
-    public String toString( String prefix )
-    {
-        StringBuilder builder = new StringBuilder();
-        builder.append( prefix );
-        builder.append( "\"" );
-
-        for ( char c : this.string.toCharArray() )
-        {
-            switch ( c )
-            {
-                case '\t' : builder.append( "\\t"  ); break;
-                case '\n' : builder.append( "\\n"  ); break;
-                case '\r' : builder.append( "\\r"  ); break;
-                case '\"' : builder.append( "\\\"" ); break;
-                case '\\' : builder.append( "\\\\" ); break;
-                default   : builder.append( c      ); break;
-            }
-        }
-
-        builder.append( "\"" );
-        builder.append( System.lineSeparator() );
-        return builder.toString();
+        return this.toString( "" );
     }
 }
