@@ -36,6 +36,8 @@ public class ByteArrayElement extends Element
 
     public ByteArrayElement( byte[] byteArray )
     {
+        if ( byteArray == null ) throw new NullPointerException( "The \"byteArray\" parameter cannot be null." );
+
         this.byteArray = byteArray;
     }
 

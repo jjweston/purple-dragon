@@ -33,6 +33,16 @@ import org.junit.jupiter.api.Test;
 public class ByteArrayElementTest
 {
     @Test
+    public void constructor_null()
+    {
+        Exception exception =
+                Assertions.assertThrowsExactly( NullPointerException.class, () -> new ByteArrayElement( null ));
+
+        Assertions.assertEquals( "The \"byteArray\" parameter cannot be null.",
+                                 exception.getMessage(), "Unexpected exception message." );
+    }
+
+    @Test
     public void toString_empty()
     {
         byte[] input = {};
