@@ -32,6 +32,8 @@ public class StringElement extends Element
 
     public StringElement( String string )
     {
+        if ( string == null ) throw new NullPointerException( "The \"string\" parameter cannot be null." );
+
         this.string = string;
     }
 

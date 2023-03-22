@@ -33,6 +33,16 @@ import org.junit.jupiter.api.Test;
 public class StringElementTest
 {
     @Test
+    public void constructor_null()
+    {
+        Exception exception =
+                Assertions.assertThrowsExactly( NullPointerException.class, () -> new StringElement( null ));
+
+        Assertions.assertEquals( "The \"string\" parameter cannot be null.",
+                                 exception.getMessage(), "Unexpected exception message." );
+    }
+
+    @Test
     public void toString_test()
     {
         String input = "tab: \t, linefeed: \n, carriage return: \r, double quote: \", backslash: \\";
