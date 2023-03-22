@@ -36,9 +36,10 @@ public class ByteArrayElementTest
     public void toString_empty()
     {
         byte[] input = {};
+        ByteArrayElement byteArrayElement = new ByteArrayElement( input );
+
         String prefix = "    ";
         String expected = "    []" + System.lineSeparator();
-        ByteArrayElement byteArrayElement = new ByteArrayElement( input );
         Assertions.assertEquals( expected, byteArrayElement.toString( prefix ), "Unexpected toString() result." );
     }
 
@@ -51,12 +52,12 @@ public class ByteArrayElementTest
             -27, 123, -100, 79, 32, 80, -20, 72, -28, 1, 5, -8, 88, -13, -18, -53
         };
 
-        String prefix = "        ";
-        String expected = "        [ 84 ba dc 0f 03 20 ea 1f db df 1a 4e 05 b5 a7 2e " +
-                                    "e5 7b 9c 4f 20 50 ec 48 e4 01 05 f8 58 f3 ee cb ]" +
-                          System.lineSeparator();
-
         ByteArrayElement byteArrayElement = new ByteArrayElement( input );
+
+        String prefix = "        ";
+        String expected = "        [ 84 ba dc 0f 03 20 ea 1f db df 1a 4e 05 b5 a7 2e "  +
+                                    "e5 7b 9c 4f 20 50 ec 48 e4 01 05 f8 58 f3 ee cb ]" + System.lineSeparator();
+
         Assertions.assertEquals( expected, byteArrayElement.toString( prefix ), "Unexpected toString() result." );
     }
 
@@ -71,19 +72,16 @@ public class ByteArrayElementTest
             89, 83, 79, 94, -115, -23, 28, -112, -15, -101, -77, -23, -42, -34, 103, -82
         };
 
-        String prefix = "            ";
-        String expected = "            [" +
-                          System.lineSeparator() +
-                          "                cb 0d 53 23 d3 a7 fc dd 48 56 fc e8 8d 0d ad e6 " +
-                                          "bf 6c b1 97 0a 91 8e 84 f2 f0 ba 08 cd c0 0e 32" +
-                          System.lineSeparator() +
-                          "                06 ec c5 58 ec b6 ca f2 a1 8f 0c 9e 04 96 3c 31 " +
-                                          "59 53 4f 5e 8d e9 1c 90 f1 9b b3 e9 d6 de 67 ae" +
-                          System.lineSeparator() +
-                          "            ]" +
-                          System.lineSeparator();
-
         ByteArrayElement byteArrayElement = new ByteArrayElement( input );
+
+        String prefix = "            ";
+        String expected = "            ["                                                    + System.lineSeparator() +
+                          "                cb 0d 53 23 d3 a7 fc dd 48 56 fc e8 8d 0d ad e6 " +
+                                          "bf 6c b1 97 0a 91 8e 84 f2 f0 ba 08 cd c0 0e 32"  + System.lineSeparator() +
+                          "                06 ec c5 58 ec b6 ca f2 a1 8f 0c 9e 04 96 3c 31 " +
+                                          "59 53 4f 5e 8d e9 1c 90 f1 9b b3 e9 d6 de 67 ae"  + System.lineSeparator() +
+                          "            ]"                                                    + System.lineSeparator();
+
         Assertions.assertEquals( expected, byteArrayElement.toString( prefix ), "Unexpected toString() result." );
     }
 }

@@ -36,20 +36,24 @@ public class NodeAttributeTest
     @Test
     public void toString_null()
     {
+        NodeAttribute nodeAttribute = new NodeAttribute( null, null );
+
         String prefix = "    ";
         String expected = "    null" + System.lineSeparator() +
                           "    null" + System.lineSeparator();
-        NodeAttribute nodeAttribute = new NodeAttribute( null, null );
+
         Assertions.assertEquals( expected, nodeAttribute.toString( prefix ), "Unexpected toString() result." );
     }
 
     @Test
     public void toString_string()
     {
-        String prefix = "        ";
-        String expected = "        \"name\"" + System.lineSeparator() +
-                          "        \"value\"" + System.lineSeparator();
         NodeAttribute nodeAttribute = new NodeAttribute( new StringElement( "name" ), new StringElement( "value" ));
+
+        String prefix = "        ";
+        String expected = "        \"name\""  + System.lineSeparator() +
+                          "        \"value\"" + System.lineSeparator();
+
         Assertions.assertEquals( expected, nodeAttribute.toString( prefix ), "Unexpected toString() result." );
     }
 }
