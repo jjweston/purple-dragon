@@ -36,6 +36,16 @@ import org.junit.jupiter.api.Test;
 public class NodeElementTest
 {
     @Test
+    public void constructor_null()
+    {
+        Exception exception =
+                Assertions.assertThrowsExactly( NullPointerException.class, () -> new NodeElement( null ));
+
+        Assertions.assertEquals( "The \"nodeAttributes\" parameter cannot be null.",
+                                 exception.getMessage(), "Unexpected exception message." );
+    }
+
+    @Test
     public void toString_empty()
     {
         NodeElement nodeElement = new NodeElement( new NodeAttribute[] {} );

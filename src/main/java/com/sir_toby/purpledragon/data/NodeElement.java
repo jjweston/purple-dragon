@@ -32,6 +32,11 @@ public class NodeElement extends Element
 
     public NodeElement( NodeAttribute[] nodeAttributes )
     {
+        if ( nodeAttributes == null )
+        {
+            throw new NullPointerException( "The \"nodeAttributes\" parameter cannot be null." );
+        }
+
         this.nodeAttributes = nodeAttributes;
     }
 
