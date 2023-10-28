@@ -1,6 +1,6 @@
 # Purple Dragon
 
-Experiment with language-driven programming.
+Experiment with language-oriented programming.
 
 ## Under Development
 
