@@ -42,7 +42,7 @@ A *String* is an ordered collection of Unicode characters.
   <i>any Unicode character, but not ", \, CR, or LF</i>
   <i>StringEscape</i>
 
-<i>StringEscape</i>
+<i>StringEscape:</i>
   \ t <i>(horizontal tab, HT)</i>
   \ n <i>(linefeed, LF)</i>
   \ r <i>(carriage return, CR)</i>
