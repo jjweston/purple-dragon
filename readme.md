@@ -39,7 +39,7 @@ A *String* is an ordered collection of Unicode characters.
   " <i>{StringCharacter}</i> "
 
 <i>StringCharacter:</i>
-  <i>any Unicode character, but not ", \, CR, or LF</i>
+  <i>any Unicode character, but not </i>"<i>, </i>\<i>, CR, or LF</i>
   <i>StringEscape</i>
 
 <i>StringEscape:</i>
