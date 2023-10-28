@@ -42,18 +42,18 @@ A *String* is an ordered collection of Unicode characters.
   <i>any Unicode character, but not </i>"<i>, </i>\<i>, CR, or LF</i>
   <i>StringEscape</i>
 
+<i>LF</i>
+  <i>the ASCII LF character, also known as "linefeed"</i>
+
+<i>CR</i>
+  <i>the ASCII CR character, also known as "carriage return"</i>
+
 <i>StringEscape:</i>
   \ t <i>(horizontal tab, HT)</i>
   \ n <i>(linefeed, LF)</i>
   \ r <i>(carriage return, CR)</i>
   \ " <i>(double quote, ")</i>
   \ \ <i>(backslash, \)</i>
-
-<i>LF</i>
-  <i>the ASCII LF character, also known as "linefeed"</i>
-
-<i>CR</i>
-  <i>the ASCII CR character, also known as "carriage return"</i>
 </pre>
 
 ### Byte Array
