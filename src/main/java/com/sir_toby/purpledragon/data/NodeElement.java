@@ -37,6 +37,11 @@ public class NodeElement extends Element
             throw new NullPointerException( "The \"nodeAttributes\" parameter cannot be null." );
         }
 
+        for ( NodeAttribute nodeAttribute : nodeAttributes ) if ( nodeAttribute == null )
+        {
+            throw new NullPointerException( "The \"nodeAttributes\" parameter cannot contain a null element." );
+        }
+
         this.nodeAttributes = nodeAttributes;
     }
 
